@@ -1,0 +1,143 @@
+<Jokes>:
+    on_pre_enter:
+        print ("555")
+    MDBoxLayout:
+        orientation:"vertical"
+        MDTopAppBar:
+        	elevation:1
+        	id:navi
+        	title:"MEMES"
+        	left_action_items:[["menu",lambda x:drawer.set_state("open")]]
+        	right_action_items:[["send",lambda x:app.root.falar()],["dots-vertical",lambda x:root.menu()]]
+        	font_name:"Roboo"
+        MDBottomNavigation:
+            id:d
+        	panel_color:"#FFFFFF"
+        	selected_color_background:"#FFFFFF"
+        	text_color_active: "#2196F3"
+        	font_name:"Roboo"
+        	MDBottomNavigationItem:
+        	    id:tela
+        	    text:"Piadas"
+        	
+            	name:"tela"
+            	icon:"emoticon-happy"
+            	MDScreen:
+            	    MDFloatLayout:
+            	        MDScrollView:
+            	            MDBoxLayout:
+            	                id:py
+            	                effect_cls:"ScrollEffect"
+            	                spacing:30
+            	                orientation:"vertical"
+            	                size_hint_y:None
+            	                height:self.minimum_height
+            	                padding:20,40,20,20
+            	                
+            
+        	MDBottomNavigationItem:
+        	    id:tela1
+        	   
+        	
+            	name:"tela1"
+            	text:"favoritas"
+            	icon:"cards-heart"
+            	MDScreen:
+            	    on_enter:
+            	        print("444")
+            	    MDFloatLayout:
+            	        MDScrollView:
+            	            MDBoxLayout:
+            	                id:pys
+            	                effect_cls:"ScrollEffect"
+            	                spacing:30
+            	                orientation:"vertical"
+            	                size_hint_y:None
+            	                height:self.minimum_height
+            	                padding:20,40,20,20
+    MDNavigationDrawer: 
+        radius:[0,0,0,0]
+        id: drawer 
+        MDNavigationDrawerMenu:
+            MDNavigationDrawerHeader:
+                title:"MEMES"
+                text:"versão 0.1"
+             
+                source:"logo.png"
+                padding:"10dp","10dp",0,0
+                spacing:"4dp"
+            items:
+                icon:"facebook"
+            items:
+                icon:"whatsapp"
+                text:"+258 856631088"
+            items:
+            	text:"CodewithMrx"
+            	icon:"youtube"
+            	
+            
+<items@MDNavigationDrawerItem>:
+    text:"Albert Last Version"
+    icon:"star"
+    focus_color:"#FFFFFF"
+    unfocus_color:"#FFFFFF"
+    ripple_color: "#FFFFFF"
+    
+    font_name:"Roboo"
+            
+            	               
+   
+<card>:
+    elevation:0.38
+    size_hint_y:None
+    height:160
+    radius:[0,0,0,0]
+    padding:10
+    MDLabel:
+        id:texto
+        text:
+        
+    MDCard:
+        orientation:"vertical"
+        size_hint_x:.16
+        radius:[0,0,0,0]
+     
+        MDIconButton:
+            icon:"cards-heart-outline"
+            id:bu
+            theme_icon_color:"Custom"
+            icon_color:"#2196F3"
+          
+        MDIconButton:
+            icon:"content-copy"
+            theme_icon_color:"Custom"
+            icon_color:"#2196F3"
+            on_release:app.copiar(root.ids.texto.text)
+<cards>:
+    elevation:0.38
+    size_hint_y:None
+    height:150
+    radius:[0,0,0,0]
+    padding:10
+    MDLabel:
+        id:textos
+        text:
+    MDCard:
+        orientation:"vertical"
+        size_hint_x:.16
+        radius:[0,0,0,0]
+        
+        MDIconButton:
+            icon:"cards-heart"
+            id:bu
+            theme_icon_color:"Custom"
+            icon_color:"#2196F3"
+            
+        MDIconButton:
+            icon:"content-copy"
+            theme_icon_color:"Custom"
+            icon_color:"#2196F3"
+            on_release:app.copiar(root.ids.textos.text)
+    
+        
+            	                   
